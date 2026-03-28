@@ -1,7 +1,6 @@
 ---
 name: step-3-build-a-website
-description: STEP 3 OF 5 — Website Factory. Builds Replit-ready Node.js/Express backend with Stripe, Drizzle ORM, lead capture endpoints, and GHL/n8n/Aria integrations. Use after Step 2 frontend.
-trigger: "run web-coder", "Step 3", "build the backend", "wire up Stripe"
+description: STEP 3 OF 5 — Website Factory. Builds Replit-ready Node.js/Express backend with Stripe, Drizzle ORM, lead capture endpoints, and GHL/n8n/Aria integrations. Use after Step 2 frontend. Trigger on "run web-coder", "Step 3", "build the backend", "wire up Stripe".
 ---
 
 # Step 3 — Web Coder: The Backend Builder
