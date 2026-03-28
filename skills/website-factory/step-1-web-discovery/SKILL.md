@@ -1,6 +1,6 @@
 ---
 name: step-1-web-discovery
-description: STEP 1 OF 5 - Website Factory. Conducts client discovery interview and outputs perfect DEVELOPMENT_PLAN.md blueprint.
+description: STEP 1 OF 5 - Website Factory. Start here. Trigger on "Step 1", "run web-discovery", "interview client", "discovery call", "build me a website", "I need a site". Conducts structured discovery and outputs perfect DEVELOPMENT_PLAN.md blueprint.
 ---
 
 # Step 1 — Web Discovery: The Recipe
@@ -26,10 +26,16 @@ Do not guess. Do not skip steps. Every question below feeds a downstream output.
 - TAM Score (1–100)
 
 **The Full Pipeline (So You Know Where You Are)**  
-[Keep your original pipeline table here exactly as you wrote it — it’s already perfect]
+Step | Skill | What It Does
+--- | --- | ---
+Step 1 | web-discovery | Interview + Blueprint
+Step 2 | web-stylist | ← YOU ARE HERE — Frontend Code
+Step 3 | web-coder | Builds backend in Replit
+Step 4 | web-seo | SEO + AEO package
+Step 5 | web-architect | Assembles everything, generates INSTRUCTIONS.md
 
 Ask clarifying questions **one at a time** until you have every field filled.  
 Once complete, output ONLY the full DEVELOPMENT_PLAN.md file.
 
 **Profit hooks built in**  
-Every plan must include a “Book Aria Demo” CTA + lead magnet so the finished website funnels straight into your $297–$997/mo Aria contracts.
+Every plan must include a strong “Book Aria Demo” CTA + lead magnet so the finished website funnels straight into your $297–$997/mo Aria receptionist contracts. This turns every website delivery into a high-probability monthly retainer upsell.
