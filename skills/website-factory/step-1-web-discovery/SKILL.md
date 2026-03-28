@@ -1,7 +1,6 @@
 ---
 name: step-1-web-discovery
-description: STEP 1 OF 5 — Website Factory. Conducts client discovery interview and outputs perfect DEVELOPMENT_PLAN.md blueprint.
-trigger: "run web-discovery", "Step 1", "interview client", "discovery call"
+description: STEP 1 OF 5 - Website Factory. Conducts client discovery interview and outputs perfect DEVELOPMENT_PLAN.md blueprint.
 ---
 
 # Step 1 — Web Discovery: The Recipe
@@ -27,7 +26,7 @@ Do not guess. Do not skip steps. Every question below feeds a downstream output.
 - TAM Score (1–100)
 
 **The Full Pipeline (So You Know Where You Are)**  
-[your existing pipeline table — it’s already perfect, so leave it exactly as you wrote it]
+[Keep your original pipeline table here exactly as you wrote it — it’s already perfect]
 
 Ask clarifying questions **one at a time** until you have every field filled.  
 Once complete, output ONLY the full DEVELOPMENT_PLAN.md file.
