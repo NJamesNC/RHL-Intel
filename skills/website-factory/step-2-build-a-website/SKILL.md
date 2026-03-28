@@ -1,8 +1,7 @@
 ---
 name: step-2-build-a-website
-description: STEP 2 OF 5 — Website Factory. Use after Step 1 (web-discovery) has generated a DEVELOPMENT_PLAN.md. Builds production-ready React/TSX frontend code for Lovable using Tailwind CSS, Lucide Icons, Framer Motion, and Spline 3D or Glassmorphism CSS. Trigger on: "run web-stylist," "Step 2," "build the frontend," or when a DEVELOPMENT_PLAN.md is ready and frontend code is needed.
+description: STEP 2 OF 5 - Website Factory. Builds production-ready React/TSX frontend for Lovable. Trigger on "run web-stylist", "Step 2", "build the frontend".
 ---
-
 # Step 2 — Web Stylist: The Frontend Builder
 **Role: The Stylist | Website Factory | Step 2 of 5**
 
