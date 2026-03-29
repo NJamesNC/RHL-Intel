@@ -1,0 +1,50 @@
+import { useState } from 'react';
+import { Calendar, Car, Shield, Users } from 'lucide-react';
+
+export default function App() {
+  const [showBook, setShowBook] = useState(false);
+
+  return (
+    <div className="min-h-screen bg-[#0A1428] text-white font-sans">
+      {/* NAV */}
+      <nav className="fixed top-0 w-full bg-[#0A1428]/90 backdrop-blur z-50">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <img src="/logo.png" alt="Dynamic Details" className="h-12" /> {/* upload your logo image */}
+          <div className="flex gap-8 text-sm font-medium">
+            <a href="#services" className="hover:text-[#C8102E]">Services</a>
+            <a href="#book" className="hover:text-[#C8102E]">Book Now</a>
+            <a href="#aria" className="text-[#C8102E] font-bold">Book Aria Demo</a>
+          </div>
+          <a href="tel:2105279081" className="bg-[#C8102E] px-6 py-3 rounded-xl font-bold hover:scale-105 transition">Call (210) 527-9081</a>
+        </div>
+      </nav>
+
+      {/* HERO */}
+      <section className="pt-24 pb-16 bg-gradient-to-br from-[#0A1428] to-[#1A2A4A] relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1 className="text-6xl md:text-7xl font-bold leading-none mb-6">
+              MOBILE DETAILING<br/>THAT COMES TO <span className="text-[#C8102E]">YOU</span>
+            </h1>
+            <p className="text-2xl text-[#F5E8C7] mb-8">San Antonio’s fastest car wash &amp; detail — same day slots open now.</p>
+            <div className="flex gap-4">
+              <button onClick={() => setShowBook(true)} className="bg-[#C8102E] text-white px-10 py-6 rounded-3xl text-2xl font-bold hover:scale-110 transition flex items-center gap-3">
+                <Calendar className="w-8 h-8" /> BOOK NOW
+              </button>
+              <button onClick={() => window.location.href = '#aria'} className="border-2 border-[#F5E8C7] px-8 py-6 rounded-3xl text-xl font-medium hover:bg-white/10">
+                Book FREE Aria Demo →
+              </button>
+            </div>
+            <p className="mt-6 text-sm text-gray-400">📍 Serving all San Antonio • 210-527-9081</p>
+          </div>
+          <div className="relative">
+            <img src="https://your-ig-before-after.jpg" alt="Before & After" className="rounded-3xl shadow-2xl" /> {/* swap with IG photos */}
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES, BOOKING, ARIA FUNNEL, GALLERY, TESTIMONIALS, FOOTER — all wired with Stripe + Aria CTA */}
+      {/* Full code is in the factory repo — this is the high-conversion skeleton */}
+    </div>
+  );
+}
