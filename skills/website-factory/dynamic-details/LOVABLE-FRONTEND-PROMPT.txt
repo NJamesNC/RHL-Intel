@@ -1,50 +1,17 @@
-import { useState } from 'react';
-import { Calendar, Car, Shield, Users } from 'lucide-react';
+Build a complete, modern, mobile-first React + Tailwind website for "Dynamic Details" mobile car detailing in San Antonio.
 
-export default function App() {
-  const [showBook, setShowBook] = useState(false);
+Logo: Use the circular navy logo with cream "DYNAMIC" on top, red "DETAILS" on bottom, gray sedan and San Antonio skyline.
 
-  return (
-    <div className="min-h-screen bg-[#0A1428] text-white font-sans">
-      {/* NAV */}
-      <nav className="fixed top-0 w-full bg-[#0A1428]/90 backdrop-blur z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <img src="/logo.png" alt="Dynamic Details" className="h-12" /> {/* upload your logo image */}
-          <div className="flex gap-8 text-sm font-medium">
-            <a href="#services" className="hover:text-[#C8102E]">Services</a>
-            <a href="#book" className="hover:text-[#C8102E]">Book Now</a>
-            <a href="#aria" className="text-[#C8102E] font-bold">Book Aria Demo</a>
-          </div>
-          <a href="tel:2105279081" className="bg-[#C8102E] px-6 py-3 rounded-xl font-bold hover:scale-105 transition">Call (210) 527-9081</a>
-        </div>
-      </nav>
+Colors: Navy #0A1428 background, Red #C8102E accents, Cream #F5E8C7 highlights, white text.
 
-      {/* HERO */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-[#0A1428] to-[#1A2A4A] relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-6xl md:text-7xl font-bold leading-none mb-6">
-              MOBILE DETAILING<br/>THAT COMES TO <span className="text-[#C8102E]">YOU</span>
-            </h1>
-            <p className="text-2xl text-[#F5E8C7] mb-8">San Antonio’s fastest car wash &amp; detail — same day slots open now.</p>
-            <div className="flex gap-4">
-              <button onClick={() => setShowBook(true)} className="bg-[#C8102E] text-white px-10 py-6 rounded-3xl text-2xl font-bold hover:scale-110 transition flex items-center gap-3">
-                <Calendar className="w-8 h-8" /> BOOK NOW
-              </button>
-              <button onClick={() => window.location.href = '#aria'} className="border-2 border-[#F5E8C7] px-8 py-6 rounded-3xl text-xl font-medium hover:bg-white/10">
-                Book FREE Aria Demo →
-              </button>
-            </div>
-            <p className="mt-6 text-sm text-gray-400">📍 Serving all San Antonio • 210-527-9081</p>
-          </div>
-          <div className="relative">
-            <img src="https://your-ig-before-after.jpg" alt="Before & After" className="rounded-3xl shadow-2xl" /> {/* swap with IG photos */}
-          </div>
-        </div>
-      </section>
+Pages / Sections (single-page scroll):
+1. Fixed navbar with logo, Services, Book Now, Book Aria Demo, phone (210) 527-9081
+2. Hero: Big headline “MOBILE DETAILING THAT COMES TO YOU” + sub “San Antonio’s fastest car wash & detail – same day slots”, two buttons: “BOOK NOW” (red) and “Book FREE Aria Demo” (cream outline)
+3. Services grid with the 4 packages above, each with “Book This” button that opens Stripe
+4. Before/After gallery (use placeholder images for now – Nick will swap from IG)
+5. Why Choose Us (we come to you, eco-friendly, 100% guarantee, military discount)
+6. Testimonials (3 fake ones for launch – Nick adds real later)
+7. Big “Book Aria Demo” section with your recurring revenue pitch
+8. Footer with “Built by RHL Digital – San Antonio, TX” and phone
 
-      {/* SERVICES, BOOKING, ARIA FUNNEL, GALLERY, TESTIMONIALS, FOOTER — all wired with Stripe + Aria CTA */}
-      {/* Full code is in the factory repo — this is the high-conversion skeleton */}
-    </div>
-  );
-}
+Make it booking-focused, fast-loading, 100% mobile optimized. Include Framer Motion for smooth scroll. Add JSON-LD for local business schema targeting “mobile detailing San Antonio”.
