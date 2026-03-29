@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Car, Armchair, Sparkles, Shield, Loader2 } from "lucide-react";
 import { useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
 const services = [
@@ -46,13 +45,17 @@ const Services = () => {
   const handleBook = async (serviceId: string) => {
     setLoadingId(serviceId);
     try {
-      const { data, error } = await supabase.functions.invoke("create-checkout", {
-        body: { serviceId },
+      const res = await fetch("/api/create-checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ serviceId }),
       });
 
-      if (error) throw error;
-      if (data?.url) {
-        window.open(data.url, "_blank");
+      const data = await res.json();
+
+      if (!res.ok) throw new Error(data.error || "Checkout failed");
+      if (data.url) {
+        window.location.href = data.url;
       }
     } catch (err: any) {
       console.error("Checkout error:", err);

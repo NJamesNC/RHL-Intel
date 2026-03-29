@@ -45,4 +45,3 @@ publicDir = "skills/website-factory/dynamic-details/dynamic-site-creator-main/di
 [userenv]
 
 [userenv.shared]
-VITE_SUPABASE_URL = "https://lhqhiuxllnasvyxqxwec.supabase.co"

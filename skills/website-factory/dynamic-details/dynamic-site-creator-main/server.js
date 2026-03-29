@@ -1,0 +1,62 @@
+import express from "express";
+import cors from "cors";
+import Stripe from "stripe";
+
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
+  apiVersion: "2024-06-20",
+});
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+const PRICES = {
+  "basic-mobile-wash": { amount: 5900, name: "Basic Mobile Wash" },
+  "interior-refresh": { amount: 9900, name: "Interior Refresh" },
+  "full-dynamic-detail": { amount: 17900, name: "Full Dynamic Detail" },
+  "premium-ceramic-shield": { amount: 24900, name: "Premium Ceramic Shield" },
+};
+
+const BASE_URL = process.env.VITE_BASE_URL || "http://localhost:5000";
+
+app.post("/api/create-checkout", async (req, res) => {
+  const { serviceId } = req.body;
+  const priceInfo = PRICES[serviceId];
+
+  if (!priceInfo) {
+    return res.status(400).json({ error: "Unknown service" });
+  }
+
+  if (!process.env.STRIPE_SECRET_KEY) {
+    return res.status(500).json({ error: "Stripe not configured" });
+  }
+
+  try {
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ["card"],
+      line_items: [
+        {
+          price_data: {
+            currency: "usd",
+            product_data: { name: priceInfo.name },
+            unit_amount: priceInfo.amount,
+          },
+          quantity: 1,
+        },
+      ],
+      mode: "payment",
+      success_url: `${BASE_URL}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${BASE_URL}/#services`,
+    });
+
+    res.json({ url: session.url });
+  } catch (err) {
+    console.error("Stripe error:", err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+const PORT = process.env.API_PORT || 3001;
+app.listen(PORT, "localhost", () => {
+  console.log(`API server running on http://localhost:${PORT}`);
+});
