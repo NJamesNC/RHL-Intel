@@ -70,10 +70,6 @@ if (fs.existsSync(distPath)) {
   });
 }
 
-const isDev = process.env.NODE_ENV !== "production";
-const PORT = isDev ? (process.env.API_PORT || 3001) : 5000;
-const HOST = isDev ? "localhost" : "0.0.0.0";
-
-app.listen(PORT, HOST, () => {
-  console.log(`Server running on http://${HOST}:${PORT}`);
+app.listen(5000, "0.0.0.0", () => {
+  console.log("Server running on http://0.0.0.0:5000");
 });
