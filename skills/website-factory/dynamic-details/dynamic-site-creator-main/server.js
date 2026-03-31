@@ -1,6 +1,11 @@
 import express from "express";
 import cors from "cors";
 import Stripe from "stripe";
+import { fileURLToPath } from "url";
+import path from "path";
+import fs from "fs";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
   apiVersion: "2024-06-20",
@@ -17,8 +22,6 @@ const PRICES = {
   "premium-ceramic-shield": { amount: 24900, name: "Premium Ceramic Shield" },
 };
 
-const BASE_URL = process.env.VITE_BASE_URL || "http://localhost:5000";
-
 app.post("/api/create-checkout", async (req, res) => {
   const { serviceId } = req.body;
   const priceInfo = PRICES[serviceId];
@@ -30,6 +33,9 @@ app.post("/api/create-checkout", async (req, res) => {
   if (!process.env.STRIPE_SECRET_KEY) {
     return res.status(500).json({ error: "Stripe not configured" });
   }
+
+  const origin = process.env.VITE_BASE_URL ||
+    `${req.protocol}://${req.get("host")}`;
 
   try {
     const session = await stripe.checkout.sessions.create({
@@ -45,8 +51,8 @@ app.post("/api/create-checkout", async (req, res) => {
         },
       ],
       mode: "payment",
-      success_url: `${BASE_URL}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${BASE_URL}/#services`,
+      success_url: `${origin}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${origin}/#services`,
     });
 
     res.json({ url: session.url });
@@ -56,7 +62,18 @@ app.post("/api/create-checkout", async (req, res) => {
   }
 });
 
-const PORT = process.env.API_PORT || 3001;
-app.listen(PORT, "localhost", () => {
-  console.log(`API server running on http://localhost:${PORT}`);
+const distPath = path.join(__dirname, "dist");
+if (fs.existsSync(distPath)) {
+  app.use(express.static(distPath));
+  app.get("*", (_req, res) => {
+    res.sendFile(path.join(distPath, "index.html"));
+  });
+}
+
+const isDev = process.env.NODE_ENV !== "production";
+const PORT = isDev ? (process.env.API_PORT || 3001) : 5000;
+const HOST = isDev ? "localhost" : "0.0.0.0";
+
+app.listen(PORT, HOST, () => {
+  console.log(`Server running on http://${HOST}:${PORT}`);
 });

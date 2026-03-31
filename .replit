@@ -42,9 +42,10 @@ localPort = 5001
 externalPort = 3000
 
 [deployment]
-deploymentTarget = "static"
+deploymentTarget = "autoscale"
 build = ["bash", "-c", "cd skills/website-factory/dynamic-details/dynamic-site-creator-main && npm run build"]
 publicDir = "skills/website-factory/dynamic-details/dynamic-site-creator-main/dist"
+run = ["bash", "-c", "cd skills/website-factory/dynamic-details/dynamic-site-creator-main && node server.js"]
 
 [userenv]
 
