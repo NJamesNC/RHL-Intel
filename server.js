@@ -5,6 +5,11 @@ import { fileURLToPath } from "url";
 import path from "path";
 import fs from "fs";
 
+process.on('uncaughtException', (err) => {
+  console.error('CRASH:', err);
+  process.exit(1);
+});
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", {
