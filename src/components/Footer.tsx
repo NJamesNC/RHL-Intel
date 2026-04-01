@@ -1,4 +1,5 @@
 import { Phone, MapPin, Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const Footer = () => (
@@ -42,8 +43,13 @@ const Footer = () => (
         </ul>
       </div>
     </div>
-    <div className="container mx-auto mt-8 pt-6 border-t border-border text-center text-muted-foreground text-xs">
-      © {new Date().getFullYear()} Dynamic Details — San Antonio, TX. Built by RHL Digital.
+    <div className="container mx-auto mt-8 pt-6 border-t border-border text-center text-muted-foreground text-xs space-y-2">
+      <div>© {new Date().getFullYear()} Dynamic Details — San Antonio, TX. Built by RHL Digital.</div>
+      <div>
+        <Link to="/privacy" className="hover:text-cream underline underline-offset-2">
+          Privacy Policy
+        </Link>
+      </div>
     </div>
   </footer>
 );
