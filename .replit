@@ -32,7 +32,7 @@ waitForPort = 5000
 [deployment]
 deploymentTarget = "vm"
 build = ["npm", "run", "build:prod"]
-run = ["node", "server.js"]
+run = ["node", "server.cjs"]
 
 [userenv]
 
