@@ -7,16 +7,16 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { label: "Services", href: "#services" },
-    { label: "Why Us", href: "#why-us" },
-    { label: "Gallery", href: "#gallery" },
-    { label: "Reviews", href: "#testimonials" },
+    { label: "Services", href: "/#services" },
+    { label: "Why Us", href: "/#why-us" },
+    { label: "Gallery", href: "/#gallery" },
+    { label: "Reviews", href: "/#testimonials" },
   ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <a href="#" className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2">
           <img src={logo} alt="Dynamic Details logo" className="h-12 w-12 rounded-full" />
           <span className="font-display text-lg tracking-wider text-cream hidden sm:block">
             DYNAMIC DETAILS
