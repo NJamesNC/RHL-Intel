@@ -1,7 +1,13 @@
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const PrivacyPolicy = () => (
+const PrivacyPolicy = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
   <div className="min-h-screen flex flex-col bg-white">
     <Navbar />
     <main className="flex-1 container mx-auto px-4 py-16 max-w-4xl">
@@ -12,7 +18,8 @@ const PrivacyPolicy = () => (
     </main>
     <Footer />
   </div>
-);
+  );
+};
 
 const PRIVACY_HTML = `
 <style>
