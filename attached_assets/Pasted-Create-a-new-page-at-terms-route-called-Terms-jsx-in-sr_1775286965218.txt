@@ -1,0 +1,66 @@
+Create a new page at /terms route called Terms.jsx in src/pages. 
+Use this exact HTML content for the page, wrapped in a clean 
+white container with padding. Also add "Terms of Service" link 
+in the footer next to the Privacy Policy link pointing to /terms.
+
+Here is the content to display:
+
+TERMS OF SERVICE
+
+Last updated: April 4, 2026
+
+AGREEMENT TO OUR LEGAL TERMS
+
+These Terms of Service constitute a legally binding agreement 
+between you and Reflect His Light LLC (doing business as 
+Dynamic Details SATX), concerning your access to and use of 
+dynamicdetailssatx.com.
+
+SERVICES
+
+Dynamic Details SATX provides mobile auto detailing services 
+in San Antonio, TX. We come to you and provide professional 
+car washing and detailing services. By submitting your 
+information through our website, you are requesting a 
+service quote.
+
+PAYMENTS
+
+We accept payments through Stripe. All payment information 
+is handled securely by Stripe. You agree to provide current, 
+complete, and accurate purchase information.
+
+REFUND POLICY
+
+- Cancellations 24+ hours before scheduled service: Full refund
+- Cancellations less than 24 hours before: 50% refund or 
+  free reschedule
+- Customer no-show: No refund
+- Service dissatisfaction: Contact james@rhldigital.com within 
+  24 hours for re-service or partial refund consideration
+- Dynamic Details SATX no-show: Full refund within 3-5 
+  business days
+
+PROHIBITED ACTIVITIES
+
+You may not use our services for any unlawful purpose or 
+in violation of any regulations.
+
+DISPUTE RESOLUTION
+
+Please contact us first at james@rhldigital.com to resolve 
+any disputes informally. If unresolved within 30 days, 
+disputes will proceed to arbitration in Texas under 
+United States law.
+
+LIMITATION OF LIABILITY
+
+Our liability is limited to the amount you paid for the 
+specific service in dispute.
+
+CONTACT US
+
+Reflect His Light LLC (DBA Dynamic Details SATX)
+3424 Meteor Night, Converse, TX 78109
+Email: james@rhldigital.com
+Phone: (210) 791-7775

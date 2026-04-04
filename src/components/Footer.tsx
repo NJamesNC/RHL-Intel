@@ -45,9 +45,13 @@ const Footer = () => (
     </div>
     <div className="container mx-auto mt-8 pt-6 border-t border-border text-center text-muted-foreground text-xs space-y-2">
       <div>© {new Date().getFullYear()} Dynamic Details — San Antonio, TX. Built by RHL Digital.</div>
-      <div>
+      <div className="flex items-center justify-center gap-4">
         <Link to="/privacy" className="hover:text-cream underline underline-offset-2">
           Privacy Policy
+        </Link>
+        <span>·</span>
+        <Link to="/terms" className="hover:text-cream underline underline-offset-2">
+          Terms of Service
         </Link>
       </div>
     </div>
