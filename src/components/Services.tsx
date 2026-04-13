@@ -1,42 +1,45 @@
 import { Button } from "@/components/ui/button";
-import { Car, Armchair, Sparkles, Shield, Loader2 } from "lucide-react";
+import { Car, Sparkles, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
-const services = [
+const packages = [
   {
+    id: "full-detail-regular",
     icon: Car,
-    id: "basic-mobile-wash",
-    name: "Basic Mobile Wash",
-    price: "$59",
-    description: "Exterior wash, wheels, tires — we come to you.",
-    features: ["Full exterior hand wash", "Wheel & tire cleaning", "Rinse & dry"],
+    name: "Regular Cars",
+    price: "$120",
+    description: "Sedans, coupes, and standard-size vehicles.",
+    features: ["Full interior detail", "Full exterior hand wash", "Wheels & tires", "Windows inside & out", "Leather conditioning"],
   },
   {
-    icon: Armchair,
-    id: "interior-refresh",
-    name: "Interior Refresh",
-    price: "$99",
-    description: "Vacuum, wipe down, windows — fresh & clean.",
-    features: ["Full vacuum", "Dashboard & console wipe", "Window cleaning"],
-  },
-  {
-    icon: Sparkles,
-    id: "full-dynamic-detail",
-    name: "Full Dynamic Detail",
-    price: "$179",
-    description: "Complete interior + exterior — the works.",
-    features: ["Everything in Basic Wash", "Full interior detail", "Leather conditioning"],
+    id: "full-detail-suv",
+    icon: Car,
+    name: "SUVs",
+    price: "$140",
+    description: "Mid-size and full-size SUVs.",
+    features: ["Full interior detail", "Full exterior hand wash", "Wheels & tires", "Windows inside & out", "Leather conditioning"],
     popular: true,
   },
   {
-    icon: Shield,
-    id: "premium-ceramic-shield",
-    name: "Premium Ceramic Shield",
-    price: "$249",
-    description: "Paint protection + deep shine — long-lasting.",
-    features: ["Full Dynamic Detail included", "Ceramic coating application", "6-month protection"],
+    id: "full-detail-large",
+    icon: Car,
+    name: "Large Trucks / Large SUVs",
+    price: "$160",
+    description: "Full-size trucks, Suburbans, Expeditions & more.",
+    features: ["Full interior detail", "Full exterior hand wash", "Wheels & tires", "Windows inside & out", "Leather conditioning"],
   },
+];
+
+const addons = [
+  { name: "Step 1 Paint Correction", price: "$200" },
+  { name: "Ceramic Wax Upgrade", price: "$300" },
+  { name: "Steam Cleaning", price: "$50" },
+  { name: "Engine Bay Detail", price: "$50" },
+  { name: "Pet Hair Removal", price: "$50–$100" },
+  { name: "Carpet Extraction", price: "$50" },
+  { name: "Seat Extraction", price: "$20 / seat" },
+  { name: "Sticker Removal", price: "$5 / sticker" },
 ];
 
 const Services = () => {
@@ -75,30 +78,34 @@ const Services = () => {
           Professional mobile detailing delivered to your door in San Antonio.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service) => (
+        {/* Full Detail Packages */}
+        <h3 className="font-display text-xl md:text-2xl font-bold text-cream tracking-wider text-center mb-6 uppercase">
+          Full Detail Packages
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          {packages.map((pkg) => (
             <div
-              key={service.name}
+              key={pkg.id}
               className={`relative rounded-xl p-6 flex flex-col border transition-transform hover:-translate-y-1 ${
-                service.popular
+                pkg.popular
                   ? "border-primary bg-card shadow-[var(--shadow-glow)]"
                   : "border-border bg-card shadow-[var(--shadow-card)]"
               }`}
               style={{ background: "var(--gradient-card)" }}
             >
-              {service.popular && (
+              {pkg.popular && (
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-display tracking-widest uppercase px-4 py-1 rounded-full">
                   Most Popular
                 </span>
               )}
-              <service.icon className="h-10 w-10 text-primary mb-4" />
+              <pkg.icon className="h-10 w-10 text-primary mb-4" />
               <h3 className="font-display text-xl font-bold text-cream tracking-wider mb-1">
-                {service.name}
+                {pkg.name}
               </h3>
-              <p className="font-display text-3xl font-bold text-primary mb-2">{service.price}</p>
-              <p className="text-muted-foreground text-sm mb-4 flex-1">{service.description}</p>
+              <p className="font-display text-3xl font-bold text-primary mb-2">{pkg.price}</p>
+              <p className="text-muted-foreground text-sm mb-4 flex-1">{pkg.description}</p>
               <ul className="space-y-2 mb-6 text-sm">
-                {service.features.map((f) => (
+                {pkg.features.map((f) => (
                   <li key={f} className="flex items-center gap-2 text-muted-foreground">
                     <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                     {f}
@@ -109,20 +116,42 @@ const Services = () => {
                 variant="book"
                 size="lg"
                 className="w-full"
-                disabled={loadingId === service.id}
-                onClick={() => handleBook(service.id)}
+                disabled={loadingId === pkg.id}
+                onClick={() => handleBook(pkg.id)}
               >
-                {loadingId === service.id ? (
+                {loadingId === pkg.id ? (
                   <><Loader2 className="h-4 w-4 animate-spin mr-2" /> Processing...</>
                 ) : (
-                  "Book This Service"
+                  "Book This Package"
                 )}
               </Button>
             </div>
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        {/* Add-on Services */}
+        <h3 className="font-display text-xl md:text-2xl font-bold text-cream tracking-wider text-center mb-6 uppercase">
+          Add-on Services
+        </h3>
+        <div className="max-w-2xl mx-auto rounded-xl border border-border bg-card shadow-[var(--shadow-card)] overflow-hidden mb-12"
+          style={{ background: "var(--gradient-card)" }}>
+          {addons.map((addon, i) => (
+            <div
+              key={addon.name}
+              className={`flex items-center justify-between px-6 py-4 ${
+                i < addons.length - 1 ? "border-b border-border" : ""
+              }`}
+            >
+              <div className="flex items-center gap-3">
+                <Sparkles className="h-4 w-4 text-primary shrink-0" />
+                <span className="text-cream font-medium">{addon.name}</span>
+              </div>
+              <span className="font-display text-primary font-bold text-lg">{addon.price}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-4 text-center">
           <Button variant="aria" size="xl" asChild>
             <a href="#aria">Book FREE Aria Demo</a>
           </Button>

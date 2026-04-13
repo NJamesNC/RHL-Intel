@@ -17,8 +17,8 @@ const Footer = () => (
 
       <div className="space-y-3">
         <h4 className="font-display text-cream tracking-wider font-bold">CONTACT</h4>
-        <a href="tel:2105279081" className="flex items-center gap-2 text-muted-foreground hover:text-cream text-sm">
-          <Phone className="h-4 w-4" /> (210) 527-9081
+        <a href="tel:2107624966" className="flex items-center gap-2 text-muted-foreground hover:text-cream text-sm">
+          <Phone className="h-4 w-4" /> (210) 762-4966
         </a>
         <div className="flex items-center gap-2 text-muted-foreground text-sm">
           <MapPin className="h-4 w-4" /> San Antonio, TX

@@ -41,11 +41,11 @@ const Navbar = () => {
             Book Aria Demo
           </Button>
           <a
-            href="tel:2105279081"
+            href="tel:2107624966"
             className="flex items-center gap-1 text-cream font-display text-sm tracking-wider"
           >
             <Phone className="h-4 w-4" />
-            <span className="hidden lg:inline">(210) 527-9081</span>
+            <span className="hidden lg:inline">(210) 762-4966</span>
           </a>
         </div>
 
@@ -79,11 +79,11 @@ const Navbar = () => {
             Book Aria Demo
           </Button>
           <a
-            href="tel:2105279081"
+            href="tel:2107624966"
             className="flex items-center justify-center gap-2 text-cream font-display tracking-wider py-2"
           >
             <Phone className="h-4 w-4" />
-            (210) 527-9081
+            (210) 762-4966
           </a>
         </div>
       )}

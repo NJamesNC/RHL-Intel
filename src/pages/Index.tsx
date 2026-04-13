@@ -14,7 +14,7 @@ const jsonLd = {
   name: "Dynamic Details",
   description: "San Antonio's premier mobile car detailing service. We come to your home or office.",
   url: "https://dynamicdetailssa.com",
-  telephone: "+12105279081",
+  telephone: "+12107624966",
   address: {
     "@type": "PostalAddress",
     addressLocality: "San Antonio",
@@ -25,7 +25,7 @@ const jsonLd = {
     "@type": "City",
     name: "San Antonio",
   },
-  priceRange: "$59-$249",
+  priceRange: "$50-$300",
   image: "https://dynamicdetailssa.com/logo.png",
   sameAs: ["https://instagram.com/dynamic.detailzz"],
   hasOfferCatalog: {
@@ -66,7 +66,7 @@ const Index = () => (
       <title>Dynamic Details | Mobile Car Detailing San Antonio TX</title>
       <meta
         name="description"
-        content="San Antonio's #1 mobile detailing service. We come to your home or office. Exterior wash, interior detail, ceramic coating. Same-day availability. Call (210) 527-9081."
+        content="San Antonio's #1 mobile detailing service. We come to your home or office. Exterior wash, interior detail, ceramic coating. Same-day availability. Call (210) 762-4966."
       />
       <meta name="keywords" content="mobile detailing San Antonio, mobile car wash San Antonio, car detailing San Antonio TX, ceramic coating San Antonio" />
       <link rel="canonical" href="https://dynamicdetailssa.com" />

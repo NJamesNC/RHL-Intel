@@ -46,7 +46,7 @@ const Terms = () => {
           Reflect His Light LLC (DBA Dynamic Details SATX)<br />
           3424 Meteor Night, Converse, TX 78109<br />
           Email: <a href="mailto:james@rhldigital.com" style={{ color: "#3030F1" }}>james@rhldigital.com</a><br />
-          Phone: <a href="tel:2107917775" style={{ color: "#3030F1" }}>(210) 791-7775</a>
+          Phone: <a href="tel:2107624966" style={{ color: "#3030F1" }}>(210) 762-4966</a>
         </p>
       </main>
       <Footer />

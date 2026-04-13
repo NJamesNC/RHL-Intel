@@ -32,8 +32,8 @@ const Hero = () => {
         >
           San Antonio's fastest car wash & full detail — we come to your home or office.
           Same-day slots open now.{" "}
-          <a href="tel:2105279081" className="text-cream font-semibold hover:underline">
-            Call (210) 527-9081
+          <a href="tel:2107624966" className="text-cream font-semibold hover:underline">
+            Call (210) 762-4966
           </a>
         </p>
 
